@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,500,700&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <script
+        type="text/javascript"> (function () { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+    <!-- <script src="https://kit.fontawesome.com/d46d03aa0f.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="./src/css/main.css">
+</head>
+
+<body>
+    <header class="header-01 highlight">
+        <div class="header__top">
+            <div class="kd-container">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- social-group -->
+                            <div class="header--left-box">
+                                <ul class="social-01">
+                                    <li>
+                                        <a href="javascript:void(0)" rel="noindex, nofolow" title="Facebook"
+                                            target="_blank">
+                                            <i class="fab fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" rel="noindex, nofolow" title="Twitter"
+                                            target="_blank">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" rel="noindex, nofolow" title="Youtube"
+                                            target="_blank">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" rel="noindex, nofolow" title="instagram"
+                                            target="_blank">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="header--right-box">
+                                <a href="tell:02473000600" title="Hotline đặt xe" class="phone">
+                                    <i class="fas fa-phone icon"></i> <strong>Hotline:</strong> 02473000600
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <i class="fas fa-user icon"></i> <strong>Tài Khoản</strong>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- menu -->
+        <div class="header__bottom">
+            <div class="kd-container">
+                <div class="container-fluid">
+                    <div class="logo">
+                        <img src="./src/images/logo.png" alt="gocheap" class="hide-sm white">
+                        <img src="./src/images/logo-black.png" alt="gocheap" class="hide-lg black">
+                    </div>
+
+                    <nav class="menu-01__wrapper menu-wrapper">
+                        <ul class="menu-01">
+                            <li class="item active">
+                                <a href="javascript:void(0)">Trang chủ</a>
+                            </li>
+                            <li class="item">
+                                <a href="javascript:void(0)">Vé máy bay</a>
+                            </li>
+                            <li class="item">
+                                <a href="javascript:void(0)">Đối tác</a>
+                            </li>
+                            <li class="item">
+                                <a href="javascript:void(0)">Khách hàng</a>
+                            </li>
+                            <li class="item hide-sm">
+                                <a href="javascript:void(0)">Mã vé</a>
+                            </li>
+                            <li class="item hide-lg">
+                                <a href="javascript:void(0)">Tra Cứu Mã vé</a>
+                            </li>
+                            <li class="item">
+                                <a href="javascript:void(0)">Tin tức</a>
+                            </li>
+                            <li class="item">
+                                <a href="javascript:void(0)">Liên hệ</a>
+                            </li>
+
+                            <li class="item hide-lg">
+                                <a href="javascript:void(0)">Tài Khoản</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- toogle menu for mobile -->
+                    <div class="trigger-toggle-menu" id="trigger-menu-mobile">
+                        <span class="line"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content main-content--02">
+        <section class="section-07 fee-calculator">
+            <div class="kd-container">
+                <div class="container-fluid">
+                    <div class="progress-01">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="step active">Đặt Xe Taxi</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="step">Điền Thông Tin Cá Nhân</div>
+                            </div>
+                            <div class="col-3">
+                                <div class="step">Hoàn Tất</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trip-information">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="information">
+                                    <p class="title">Chuyến đi đến sân bay</p>
+                                    <div class="group">
+                                        <div class="item row">
+                                            <div class="col-md-4">
+                                                <label class="label" for="">Điểm Đón Khách</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input type="text" name="start-location" class="input-01"
+                                                    placeholder="Điểm Đón">
+                                            </div>
+                                        </div>
+
+                                        <div class="item row">
+                                            <div class="col-md-4">
+                                                <label class="label" for="">Điểm Trả Khách</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input type="text" name="end-location" class="input-01"
+                                                    placeholder="Điểm Đến">
+                                            </div>
+                                        </div>
+
+                                        <div class="item row">
+                                            <div class="col-md-4">
+                                                <label class="label" for="">Thời Gian Khởi Hành</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input type="text" name="time" class="input-01" id="datePicker-01">
+                                            </div>
+                                        </div>
+
+                                        <div class="item row">
+                                            <div class="col-md-4">
+                                                <label class="label" for="">Hành trình</label>
+                                            </div>
+                                            <div class="col-7 offset-5 offset-sm-0 col-md-8">
+                                                <div class="row">
+                                                    <div class="type-item col-md-5 offset-md-1">
+                                                        <label for="one">
+                                                            <input type="radio" name="tour" id="one" value="0" checked>
+                                                            <span>Một chiều</span>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="type-item col-md-5">
+                                                        <label for="two">
+                                                            <input type="radio" name="tour" id="two" value="1">
+                                                            <span>Hai chiều</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item row">
+                                            <div class="col-md-4">
+                                                <label class="label" for="">Số điểm đón khách</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select name="" id="" class="input-01">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="item row">
+                                            <div class="col-md-4">
+                                                <label class="label" for="">Loại xe</label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select name="" id="" class="input-01">
+                                                    <option value="0">Tất cả xe</option>
+                                                    <option value="1">Xe đời mới 5 chỗ</option>
+                                                    <option value="2">Xe đời mới 7 chỗ</option>
+                                                    <option value="3">Xe đời mới 16 chỗ</option>
+                                                    <option value="4">Xe 35 - 45 chỗ</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="map">
+                                    <div class="resultMap"></div>
+                                    <div class="map-info">
+                                        <div class="pull-left">Lộ Trình: <span id="distance">0km</span></div>
+                                        <div class="pull-right">Thời Gian: <span id="time">1 min</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trip-cars">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-12">
+                                    <div class="booking-type booking-type-1">
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <h3 class="title text-left text-upper">
+                                                    <span>Xe đời mới 5 chỗ</span>
+                                                </h3>
+                                                <p class="text-left star-group">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <sup>4.8</sup>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <img src="./src/images/car5.jpg"
+                                                    alt="Xe đời mới 5 chỗ" class="img-responsive">
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <p class="infor">
+                                                    <i class="fas fa-users"></i> Số chỗ: 5 <br>
+                                                    <i class="fas fa-dot-circle"></i> Điểm đón: 1 <br>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <p class="text-center price">
+                                                    <strong class="booking-price booking-price-">200,000đ</strong>
+                                                    <span>Giá
+                                                        trọn gói</span>
+                                                </p>
+                                                <!-- <strong class="booking-price">Giá liên hệ</strong> -->
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <button title="Đặt ngay" class="button-submit">Đặt ngay</button>
+                                            </div>
+                                        </div>
+                                        <div class="row note">
+                                            <div class="col-lg-12">
+                                                <div style="font-style: italic; font-size: 13px;">
+                                                    Đã bao gồm VAT và phí cầu đường, bến bãi. Giá trên không áp dụng cho
+                                                    các
+                                                    ngày
+                                                    Lễ, Tết. Vui lòng liên hệ Hotline 02473000600 để cập nhập.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-12">
+                                    <div class="booking-type booking-type-1">
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <h3 class="title text-left text-upper">
+                                                    <span>Xe đời mới 5 chỗ</span>
+                                                </h3>
+                                                <p class="text-left star-group">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <sup>4.8</sup>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <img src="./src/images/car7.jpg"
+                                                    alt="Xe đời mới 7 chỗ" class="img-responsive">
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <p class="infor">
+                                                    <i class="fas fa-users"></i> Số chỗ: 7 <br>
+                                                    <i class="fas fa-dot-circle"></i> Điểm đón: 1 <br>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <p class="text-center price">
+                                                    <strong class="booking-price booking-price-">250,000đ</strong>
+                                                    <span>Giá
+                                                        trọn gói</span>
+                                                </p>
+                                                <!-- <strong class="booking-price">Giá liên hệ</strong> -->
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <button title="Đặt ngay" class="button-submit">Đặt ngay</button>
+                                            </div>
+                                        </div>
+                                        <div class="row note">
+                                            <div class="col-lg-12">
+                                                <div style="font-style: italic; font-size: 13px;">
+                                                    Đã bao gồm VAT và phí cầu đường, bến bãi. Giá trên không áp dụng cho
+                                                    các
+                                                    ngày
+                                                    Lễ, Tết. Vui lòng liên hệ Hotline 02473000600 để cập nhập.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-12">
+                                    <div class="booking-type booking-type-1 booking-type-1--02">
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <h3 class="title text-left text-upper">
+                                                    <span>Xe đời mới 16 chỗ</span>
+                                                </h3>
+                                                <p class="text-left star-group">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <sup>4.8</sup>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <img src="./src/images/car16.jpg" alt="Xe đời mới 16 chỗ"
+                                                    class="img-responsive">
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <p class="infor">
+                                                    <i class="fas fa-users"></i> Số chỗ: 16 <br>
+                                                    <i class="fas fa-dot-circle"></i> Điểm đón: 1 <br>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <p class="text-center price">
+                                                    <strong class="booking-price">Giá liên hệ</strong>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <a href="https://www.gocheap.vn/lien-he-dang-ky"
+                                                    title="Yêu cầu đặt biệt" class="button-submit">Yêu Cầu Đặt Biệt</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-12">
+                                    <div class="booking-type booking-type-1 booking-type-1--02">
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <h3 class="title text-left text-upper">
+                                                    <span>Xe đời mới 35 - 45 chỗ</span>
+                                                </h3>
+                                                <p class="text-left star-group">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <sup>4.9</sup>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <img src="./src/images/car35.jpg" alt="Xe đời mới 35 - 45 chỗ"
+                                                    class="img-responsive">
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <p class="infor">
+                                                    <i class="fas fa-users"></i> Số chỗ: 35 - 45 <br>
+                                                    <i class="fas fa-dot-circle"></i> Điểm đón: 1 <br>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <p class="text-center price">
+                                                    <strong class="booking-price">Giá liên hệ</strong>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <a href="https://www.gocheap.vn/lien-he-dang-ky"
+                                                    title="Yêu cầu đặt biệt" class="button-submit">Yêu Cầu Đặt Biệt</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="bottom-link">
+        <div class="kd-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-6 col-lg-3">
+                                <h4 class="title">Giới Thiệu</h4>
+                                <ul class="list">
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Về chúng tôi</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Đối tác</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Tuyển dụng</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Tin tức công ty</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                                <h4 class="title">Chương trình</h4>
+                                <ul class="list">
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Khách hàng tổ chức</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Đối tác vận chuyển</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Beemedia.com.vn</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Trung tâm dịch vụ xe ATOM</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-12 hide-lg">&nbsp;</div>
+
+                            <div class="col-6 col-lg-3">
+                                <h4 class="title">Chính sách</h4>
+                                <ul class="list">
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Vận chuyển hành khách</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Bảo vệ quyền riêng tư</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Sử dụng dịch vụ</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Giải quyết sự cố & khiếu nại</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-6 col-lg-3">
+                                <h4 class="title">HỖ TRỢ</h4>
+                                <ul class="list">
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Hướng dẫn đặt xe</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">Câu hỏi thường gặp</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">mage-addons.com</a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="javascript:void(0)">thienco.vn</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4 class="title">CÀI ĐẶT APP ĐỐI TÁC</h4>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="javascript:void(0)" target="_blank" title="Link tải Gocheap">
+                                    <img src="./src/images/googleplay.png" alt="google play">
+                                </a>
+                            </div>
+
+                            <div class="col-6">
+                                <a href="javascript:void(0)" target="_blank" title="Link tải Gocheap">
+                                    <img src="./src/images/appstore.png" alt="appstore">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="kd-container">
+            <div class="container">
+                <div class="footer-info text-center">
+                    <p class="footer__title"><strong>CÔNG TY CỔ PHẦN TƯ VẤN VÀ TRIỂN KHAI CÔNG NGHỆ THIÊN
+                            ÂN</strong></p>
+                    <p>Tầng 8, Tòa nhà số 11, ngõ 02 cổng trường ĐH Hà Nội (cạnh Passion Café), km 9, Nguyễn Trãi,
+                        Thanh Xuân, Hà Nội</p>
+                    <p>Điện thoại:
+                        <a href="tel:024.73000600">024.73000600</a>
+                        Email:
+                        <a href="mailto:hotro@gocheap.vn">hotro@gocheap.vn</a>
+                        Website: www.gocheap.vn
+                    </p>
+                    <p> GOCHEAP ©
+                        <script>document.write(new Date().getFullYear())</script> Được hỗ trợ bời <b><a
+                                href="http://ongen.asia">ongen.asia</a></b>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a id="hotline" href="tel:02473000600"><i class="fa fa-phone"></i></a>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link async href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <!-- <script type="text/javascript"> (function() {
+        var css = document.createElement('link');
+        css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css';
+        css.rel = 'stylesheet'; css.type = 'text/css';
+        document.getElementsByTagName('head')[0].appendChild(css); })();
+    </script> -->
+
+    <!-- swiper slide -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js.map"></script>
+
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.2/flatpickr.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flatpickr@4.1.4/dist/plugins/confirmDate/confirmDate.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.2/flatpickr.min.js"></script>
+    <script src="https://unpkg.com/flatpickr@4.1.4/dist/plugins/confirmDate/confirmDate.js"></script>
+
+    <script src="src/js/index.js"></script>
+</body>
+
+</html>

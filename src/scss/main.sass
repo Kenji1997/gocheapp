@@ -7,11 +7,14 @@
 body
     font-family: 'Lato', 'Roboto', 'Open Sans', sans-serif
 
+.kd-container
+    max-width: 1170px
+    margin: 0 auto
+
 $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6: '\f055', 7: '\f2b9', 8: '\f007')
 
 .header-01
     border: thin solid #dddddd
-    padding: 8px 0
     @include fixed(0, 0, null, 0)
     z-index: 999
     background-color: #fff
@@ -20,6 +23,7 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
         display: none
 
     .header__bottom
+        padding: 8px 0
         position: relative
 
     .logo
@@ -54,15 +58,92 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
             border-bottom: thin solid #ddd
         a
             color: #333
+            text-transform: uppercase
             font-size: 15px
-            
     
     .trigger-toggle-menu
         @include header__trigger-toggle-menu(3px, $blue-primary)
-        right: 0
+    
+    @media screen and (min-width: $tablet)
+        .header__bottom
+            padding: 18px 0
+        .menu-01__wrapper
+            top: $header-tablet-height
+    @media screen and (min-width: $desktop)
+        background-color: transparent
+        border: none
+
+        &.highlight
+            border-bottom: thin solid $blue-primary
+            .header__top
+                background-color: $blue-primary
+            .header__bottom
+                background-color: #fff
+                .logo
+                    .white
+                        display: none !important
+                    .black
+                        display: inline-block !important
+                .menu-01 .item a
+                    color: $blue-primary
+                    &:hover
+                        color: #ffffff
+        .header__top
+            transition: background-color 0.3s ease-in-out
+            display: block
+            background-color: rgba($blue-primary, 0.4)
+            .header--right-box
+                text-align: right
+                a
+                    color: #fff
+                    display: inline-block
+                    padding: 7px 13px
+                    font-size: 15px
+                .icon
+                    margin-right: 3px
+        .header__bottom
+            transition: background-color 0.3s ease-in-out
+            background-color: rgba(#fff, 0.5)
+            padding: 5px 0
+        .menu-01__wrapper
+            position: static
+            float: right
+            width: auto
+            transform: translate(0)
+            background-color: transparent
+            border-right: none
+            margin-top: 5px
+            .item
+                display: inline-block
+                border-bottom: none
+                padding: 0
+                &.active a
+                    background-color: $blue-primary
+                    color: #ffffff !important
+                a
+                    color: #ffffff
+                    font-size: 13px
+                    display: inline-block
+                    margin: 0 5px
+                    padding: 10px 25px
+                    transition: all 0.3s ease-in-out
+                    border-radius: 23px
+                    &:hover
+                        background-color: $blue-primary
+                &:before
+                    display: none
+        .menu-01
+            margin-bottom: 0
 
 .main-content
     padding-top: $header-mobile-height
+    @media screen and (min-width: $tablet)
+        padding-top: $header-tablet-height
+    @media screen and (min-width: $desktop)
+        padding-top: 0
+        min-height: calc(100vh - #{$footer-desktop-height})
+        &.main-content--02
+            padding-top: $header-desktop-height
 
 .hero-section
     position: relative
@@ -70,17 +151,55 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
         display: none
     
     .swiper-slide
-        min-height: 466px
+        height: 466px
         background-repeat: no-repeat
         background-position: center
         background-size: auto 100%
+        img
+            height: 100%
+            object-fit: cover
+
+    @media screen and (min-width: $tablet)
+        .swiper-slide
+            min-height: calc(100vh - #{$header-mobile-height})
+        .form-calculator
+            top: 65%
+    @media screen and (min-width: $desktop)
+        .swiper-slide
+            height: auto
+            min-height: auto
+            img
+                height: auto
+                object-fit: auto
+        .form-calculator
+            top: auto
+            transform: translate(50%, 0)
+            bottom: 100px
+        .hero-section__content
+            display: block
+            @include absolute(50%, 50%)
+            transform: translate(50%, -50%)
+            text-align: center
+            .title
+                font-size: 20px
+                text-transform: uppercase
+                color: $blue-primary
+                margin: 26px 0
+            .description
+                letter-spacing: 0.8px
+                font-weight: bold
+                font-size: 30px
+                color: #ffffff
+            
+            
+
 
 .form-calculator
-    @include absolute(50%, -50%)
-    transform: translate(-50%, -50%)
+    @include absolute(50%, 50%)
+    transform: translate(50%, -50%)
     z-index: 100
     width: 100%
-    max-width: 430px
+    max-width: 650px
 
     background-color: transparent
     padding: 0 15px
@@ -149,9 +268,9 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
             border-bottom-left-radius: 0
             margin-left: -1px
             &.green i
-                color: #15b55f
-            &.red i
-                color: #ca1414
+                color: #08a969
+            &.blue-bold i
+                color: #104bbf
 
     .button-01
         width: 100%
@@ -167,6 +286,14 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
         font-weight: bold
         &:hover
             background-color: #1b80ce
+
+    @media screen and (min-width: $desktop)
+        max-width: 1140px
+        .input-01
+            margin-bottom: 0
+        .taxiType .item
+            cursor: pointer
+
 
 .why-choose
     padding-top: 20px
@@ -187,10 +314,24 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
             font-size: 15px
             text-align: justify
             margin-bottom: 35px
+    @media screen and (min-width: $tablet ) and (max-width: $desktop)
+        padding-left: 10px
+        padding-right: 10px
+        .icon
+            margin-top: 0
+            width: 100%
+            text-align: center
+        .contents
+            width: 100%
+    @media screen and (min-width: $desktop )
+        .icon
+            margin-top: 0
 
 .counting
     background-image: url('../images/cars.jpg')
     background-attachment: fixed
+    background-size: cover
+    background-position: center
     position: relative
     padding: 100px 0px 60px
     &:before
@@ -227,10 +368,242 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
         font-weight: 900
         margin: 0 0 30px 0
 
+.long-trip
+    position: relative
+    padding-bottom: 40px
+    background-color: #D2D2D2
+    &:before,
+    &:after
+        content: ''
+        @include absolute(0, 0, null, 0)
+        display: block
+        height: 300px
+        background-image: url('../images/longtrip.jpg')
+        background-size: cover
+        background-attachment: fixed
+        background-position: center
+        background-repeat: no-repeat
+    .top-content
+        position: relative
+        z-index: 3
+        color: #fff
+        margin-bottom: 30px
+        .text-title
+            text-align: left
+            background-position: left bottom
+            margin-top: 0
+            padding-top: 40px
+            margin-bottom: 20px
+    .swiper-longtrip
+        position: relative
+        overflow: hidden
+    .longtrip__arrow
+        text-align: center
+        margin-top: 20px
+
+        .longtrip-button-next,
+        .longtrip-button-prev
+            display: inline-block
+            cursor: pointer
+            width: 50px
+            height: 30px
+            line-height: 30px
+            text-align: center
+            color: #ffffff
+            margin: 0 10px
+            background-color: $blue-primary
+            font-size: 22px
+            font-weight: bold
+            position: relative
+            &:before,
+            &:after
+                content: ''
+                position: absolute
+                border-left: 0px solid transparent
+                border-right: 11px solid transparent
+                border-top: 30px solid $blue-primary
+                bottom: 0
+                left: 50%
+                margin-left: 0px
+                left: 100%
+            &:after
+                border-top: 30px solid transparent
+                border-bottom: 0 solid transparent
+                border-right: 11px solid $blue-primary
+                top: 0
+                left: -11px
+
 .news
     padding-bottom: 30px
     .post-01
         margin-bottom: 25px
 
 .bottom-link
-    padding: 30px 0
+    padding: 30px 0 60px
+    .title
+        text-transform: uppercase
+        font-weight: 700
+        font-size: 15px
+        color: $blue-primary
+        margin: 20px 0 15px
+    .item
+        a
+            color: #777
+            font-size: 15px
+
+.footer
+    background: #eee
+    padding: 15px 0 10px 0
+    color: #222
+    text-align: center
+    p
+        margin-bottom: 5px
+
+    .footer__title
+
+#hotline
+    @include fixed(null, null, 30px, 10px)
+    z-index: 100000
+    background: $blue-primary
+    width: 50px
+    height: 50px
+    display: inline-block
+    margin-top: 10px
+    color: #fff
+    text-align: center
+    font-size: 25px
+    line-height: 48px
+    border-radius: 50px
+    text-decoration: none    
+
+.fee-calculator
+    margin-bottom: 60px
+    .progress-01
+        padding: 15px
+        [class^="col-"]
+            padding: 0 1px
+        .step
+            background-color: #ddd
+            padding: 10px
+            height: 100%
+            text-align: center
+            font-size: 15px
+            &.active
+                background-color: $blue-primary
+                color: #ffffff
+
+    .trip-information
+        background-color: #ddd
+        margin-bottom: 30px
+        padding: 15px
+        .title
+            text-align: center
+        .item
+            margin-bottom: 15px
+            .label
+                color: #333333
+                font-weight: bold
+                margin-bottom: 5px
+                text-transform: capitalize
+            .input-01
+                display: block
+                width: 100%
+                height: 34px
+                padding: 6px 12px
+                font-size: 14px
+                line-height: 1.42857143
+                color: #555
+                background-color: #fff
+                background-image: none
+                border: 1px solid #ccc
+                border-radius: 4px
+                &:focus
+                    outline: none
+            .type-item
+                label
+                    cursor: pointer
+                    margin-bottom: 3px
+    .map
+        .resultMap
+            min-height: 280px
+            background-color: rgb(229, 227, 223)
+        .map-info
+            margin-top: 10px
+            @extend %clearFix
+            color: #333333
+            .pull-left
+                float: left
+            .pull-right
+                float: right
+
+    .trip-cars
+        .booking-type
+            border: 1px solid #ddd
+            border-radius: 2px
+            margin-bottom: 15px
+            padding: 15px
+        .star-group
+            .fa-star
+                color: #FFD42A
+            sup
+                background: $blue-primary
+                color: #fff
+                font-size: 11.25px
+                padding: 3px
+                border-radius: 10px
+                cursor: pointer
+        .infor
+            margin: 15px 0
+        .price
+            font-size: 25px
+            text-align: center
+            span
+                font-size: 15px
+                display: block
+        .button-submit
+            background: $blue-primary
+            display: block
+            width: 100%
+            color: #fff
+            margin: 30px 0 0
+            font-weight: normal
+            font-size: 14px
+            text-align: center
+            vertical-align: middle
+            touch-action: manipulation
+            cursor: pointer
+            border: thin solid transparent
+            white-space: nowrap
+            padding: 6px 12px
+            line-height: 1.42857143
+            border-radius: 4px
+            user-select: none
+        .note
+            margin-top: 15px
+    @media screen and (min-width: $tablet)
+        .trip-information
+            .information
+                .item
+                    .col-md-4
+                        text-align: right
+    @media screen and (min-width: $desktop)
+        .progress-01
+            padding: 30px 30px 15px
+        .trip-information
+            background-color: transparent
+            .information
+                background-color: #ddd
+                padding: 10px
+        .trip-cars
+            .booking-type-1
+                .price
+                    margin: 9px 0
+            .booking-type-1--02
+                .price
+                    margin: 20px 0
+        .map
+            height: 100%
+            padding: 10px
+            background-color: #ddd
+            .map-info
+                margin-top: 17px

@@ -9,6 +9,9 @@ $(document).ready(function () {
     // slide init
     var bannerSwiper = new Swiper('.swiper-banner');
     var longtripSwiper = new Swiper('.swiper-longtrip', {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        loop: true,
         navigation: {
             nextEl: '.longtrip-button-next',
             prevEl: '.longtrip-button-prev',
@@ -24,12 +27,47 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     });
 
+    //header effect
+    if ($('.headerEffect')) {
+        $(window).on('scroll', function (e) {
+            if ($(window).scrollTop() === 0) {
+                return $('.headerEffect').removeClass('highlight')
+            }
+
+            $('.headerEffect').addClass('highlight')
+        })
+    }
+
     //main form effect
     $('.taxiType .item').on('click', function (e) {
         $('#mainForm .taxiType .item').removeClass('active')
         // });
         $(this).addClass('active')
     })
+
+    // counting effect
+    $('.counting [data-count]').each(function () {
+        var $this = $(this),
+            countTo = $this.attr('data-count');
+
+        $({ countNum: $(this).text() }).animate(
+            {
+                countNum: countTo
+            },
+            {
+
+                duration: 6000,
+                easing: 'linear',
+                step: function () {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function () {
+                    $this.text(this.countNum);
+                }
+
+            }
+        );
+    });
 });
 
 $(document).on('click', function (e) {
@@ -38,7 +76,7 @@ $(document).on('click', function (e) {
     //     mainMenuWrapper.removeClass('show');
     // }
 
-    if ( !$('#trigger-menu-mobile').is(e.target) && !$('#trigger-menu-mobile').has(e.target).length && !$('.menu-wrapper').is(e.target)) {
+    if (!$('#trigger-menu-mobile').is(e.target) && !$('#trigger-menu-mobile').has(e.target).length && !$('.menu-wrapper').is(e.target)) {
         $(".menu-01__wrapper").removeClass('show');
         $('#trigger-menu-mobile').removeClass('active');
     }
