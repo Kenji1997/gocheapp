@@ -1,0 +1,49 @@
+@import 'variables';
+
+@media screen and (min-width: $tablet) {
+    .hide-md {
+        display: none;
+    } 
+}
+
+.hide-sm {
+    @media screen and (max-width: $tablet) {
+        display: none;
+    } 
+}
+
+.text-title {
+    text-align: center;
+    background: url(../images/line.png) no-repeat center bottom;
+    padding-bottom: 20px;
+    font-weight: 900;
+    font-size: 27px;
+    text-transform: uppercase;
+    margin: 40px 0;
+    strong {
+        color: $blue-primary
+    }
+}
+
+.thumbnail-01 {
+    padding: 4px;
+    border: thin solid #ddd;
+}
+
+.post-01 {
+    a {
+        display: block;
+        color: #333333;
+    }
+
+    .title {
+        margin: 17px 0;
+        font-size: 17px;
+    }
+
+    .description {
+        font-size: 15px;
+        margin: 15px 0;
+        font-weight: normal;
+    }
+}

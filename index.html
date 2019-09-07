@@ -7,8 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,500,700&display=swap" rel="stylesheet">
+
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script
+        type="text/javascript"> (function () { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+    <!-- <script src="https://kit.fontawesome.com/d46d03aa0f.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="./src/css/main.css">
 </head>
 
 <body>
@@ -20,22 +27,22 @@
                     <ul class="social-01">
                         <li>
                             <a href="javascript:void(0)" rel="noindex, nofolow" title="Facebook" target="_blank">
-                                <i class="fa fa-facebook-official"></i>
+                                <i class="fab fa-facebook"></i>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" rel="noindex, nofolow" title="Twitter" target="_blank">
-                                <i class="fa fa-twitter"></i>
+                                <i class="fab fa-twitter"></i>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" rel="noindex, nofolow" title="Youtube" target="_blank">
-                                <i class="fa fa-youtube-play"></i>
+                                <i class="fab fa-youtube"></i>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" rel="noindex, nofolow" title="instagram" target="_blank">
-                                <i class="fa fa-instagram"></i>
+                                <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                     </ul>
@@ -43,7 +50,7 @@
 
                 <div class="header--right-box">
                     <a href="tell:02473000600" title="Hotline đặt xe" class="phone">
-                        <i class="fa fa-phone"></i> <strong>Hotline:</strong> 02473000600
+                        <i class="fas fa-phone"></i> <strong>Hotline:</strong> 02473000600
                     </a>
                 </div>
             </div>
@@ -51,10 +58,11 @@
             <!-- menu -->
             <div class="header__bottom">
                 <div class="logo">
-                    <img src="./src/images/logo.png" alt="gocheap">
+                    <img src="./src/images/logo.png" alt="gocheap" class="hide-sm">
+                    <img src="./src/images/logo-black.png" alt="gocheap" class="hide-md">
                 </div>
 
-                <nav class="menu-01__wrapper">
+                <nav class="menu-01__wrapper menu-wrapper">
                     <ul class="menu-01">
                         <li class="item">
                             <a href="javascript:void(0)">Trang chủ</a>
@@ -69,7 +77,7 @@
                             <a href="javascript:void(0)">Khách hàng</a>
                         </li>
                         <li class="item">
-                            <a href="javascript:void(0)">Mã vé</a>
+                            <a href="javascript:void(0)">Tra Cứu Mã vé</a>
                         </li>
                         <li class="item">
                             <a href="javascript:void(0)">Tin tức</a>
@@ -77,351 +85,557 @@
                         <li class="item">
                             <a href="javascript:void(0)">Liên hệ</a>
                         </li>
+
+                        <li class="item">
+                            <a href="javascript:void(0)">Tài Khoản</a>
+                        </li>
                     </ul>
                 </nav>
 
                 <!-- toogle menu for mobile -->
-                <div class="trigger-mobile">
+                <div class="trigger-toggle-menu" id="trigger-menu-mobile">
                     <span class="line"></span>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="hero-section">
-        <!-- banner slide -->
-        <div class="swiper-container swiper-banner">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="hero-section__content">
-                        <h4 class="text-upper text-blue">GO FOR FUTURE</h4>
-                        <h2 class="text-upper text-white">Dịch vụ đặt xe sân bay Nội Bài giá rẻ</h2>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="hero-section__content">
-                        <h4 class="text-upper text-blue">GO FOR FUTURE2</h4>
-                        <h2 class="text-upper text-white">Dịch vụ đặt xe sân bay Nội Bài giá rẻ</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- form -->
-        <div id="mainForm">
-            <div class="tab">
-                <ul class="taxiType">
-                    <li class="item">
-                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                        <span>Taxi Sân Bay</span>
-                    </li>
-                    <li class="item">
-                        <i class="fa fa-road" aria-hidden="true"></i>
-                        <span>Đường dài trọn gói</span>
-                    </li>
-                    <li class="item">
-                        <i class="fa fa-gift" aria-hidden="true"></i>
-                        <span>Đường Dài Siêu Rẻ</span>
-                    </li>
-                    <li class="item">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <span>Yêu Cầu Đặc Biệt</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="form">
-                <div class="input-01">
-                    <!-- input text -->
-                    <input type="text" placeholder="Điểm đón" name="start-location" id="">
-
-                    <!-- button location -->
-                    <div class="button-decoration">
-                        <i class="blue fa fa-map-marker-alt"></i>
-                    </div>
-
-                    <!-- suggest location -->
-                    <div class="suggest-location">
-                        <ul class="suggest">
-                            <li class="item">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci similique
-                                vitae beatae sit. Maiores, provident debitis quam nihil voluptatem ex possimus quos
-                                perferendis, nisi, inventore est adipisci minima cupiditate!
-                            </li>
-                            <li class="item">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci similique
-                                vitae beatae sit. Maiores, provident debitis quam nihil voluptatem ex possimus quos
-                                perferendis, nisi, inventore est adipisci minima cupiditate!
-                            </li>
-                            <li class="item">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci similique
-                                vitae beatae sit. Maiores, provident debitis quam nihil voluptatem ex possimus quos
-                                perferendis, nisi, inventore est adipisci minima cupiditate!
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="input-01 input-01--02">
-                    <!-- input text -->
-                    <input type="text" placeholder="Thời gian" name="start-location" id="">
-
-                    <!-- button location -->
-                    <div class="button-decoration">
-                        <i class="blue fa fa-map-marker-alt"></i>
-                    </div>
-
-                    <!-- suggest location -->
-                    <div class="suggest-location">
-                        <ul class="suggest">
-                            <li class="item">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci similique
-                                vitae beatae sit. Maiores, provident debitis quam nihil voluptatem ex possimus quos
-                                perferendis, nisi, inventore est adipisci minima cupiditate!
-                            </li>
-                            <li class="item">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci similique
-                                vitae beatae sit. Maiores, provident debitis quam nihil voluptatem ex possimus quos
-                                perferendis, nisi, inventore est adipisci minima cupiditate!
-                            </li>
-                            <li class="item">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur adipisci similique
-                                vitae beatae sit. Maiores, provident debitis quam nihil voluptatem ex possimus quos
-                                perferendis, nisi, inventore est adipisci minima cupiditate!
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <button class="button-01">Xem giá</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-02 why-choose">
-        <div class="kd-container">
-            <div class="container-fluid">
-                <h2 class="text-title text-center">
-                    <span>Tại sao chọn </span>
-                    <strong>GoCheap.VN</strong>
-                </h2>
-
-                <div class="row">
-                    <!-- content-01 -->
-                    <div class="col-sm-4">
-                        <div class="choose-contents">
-                            <div class="icon">
-                                <i class="fa fa-hand-holding-usd"></i>
-                            </div>
-                            <div class="contents">
-                                <h3 class="title">
-                                    <span>Tận hưởng chuyến đi an toàn và tiết kiệm</span>
-                                </h3>
-                                <p class="description">Giá cước trọn gói, rẻ nhất trên thị trường. Chỉ cần chọn đi, điểm
-                                    đến và chọn ngày đi mong muốn. Chúng tôi sẽ lọc và gợi ý cho bạn những chuyến đi phù
-                                    hợp.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- content-02 -->
-                    <div class="col-sm-4">
-                        <div class="choose-contents">
-                            <div class="icon">
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="contents">
-                                <h3 class="title">
-                                    <span>Chất lượng dịch vụ sang trọng, đẳng cấp</span>
-                                </h3>
-                                <p class="description">Hoàn 100% chi phí nếu khách không hài lòng. Xe riêng đón trả
-                                    khách
-                                    tại
-                                    nhà, không giới hạn điểm đón/trả. Dàn xe mới,
-                                    chất lượng tốt, tiện nghi (nhiều loại xe từ 4 - 45 chỗ)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- content-03 -->
-                    <div class="col-sm-4">
-                        <div class="choose-contents">
-                            <div class="icon">
-                                <i class="fa fa-user-shield"></i>
-                            </div>
-                            <div class="contents">
-                                <h3 class="title">
-                                    <span>Tiêu chuẩn phục vụ chuẩn Kim Cương</span>
-                                </h3>
-                                <p class="description">Chuyến đi an toàn, phải bắt đầu từ người lái xe đáng tin cậy. Các
-                                    Đối
-                                    tác
-                                    Tài Xế luôn được trang bị sẵn sàng để xử
-                                    lý với bất kỳ vấn đề nào phát sinh trên đường đi.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-03 long-trip">
-        <div class="top-content">
-            <h2 class="title">
-                <span>TUYẾN ĐƯỜNG DÀI</span>
-            </h2>
-            <p class="desction">Cam kết mức giá rẻ nhất trên thị trường. Luôn đứng top 1 về giá dịch vụ xe sân bay. Xe
-                riêng đón trả khách tại nhà, không giới hạn điểm đón/trả.</p>
-        </div>
-
-        <div class="bottom-content">
-            <div class="swiper-longtrip">
+    <div class="main-content">
+        <section class="hero-section">
+            <!-- banner slide -->
+            <div class="swiper-container swiper-banner">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image: url('./src/images/banner.jpg')">
+                        <div class="hero-section__content">
+                            <h4 class="text-upper text-blue">GO FOR FUTURE</h4>
+                            <h2 class="text-upper text-white">Dịch vụ đặt xe sân bay Nội Bài giá rẻ</h2>
+                        </div>
+                    </div>
+
                     <div class="swiper-slide">
-                        <div class="trip-item">
-                            <a href="javascript:void(0)" class="trip-link" title="Xem thêm">
-                                <img src="./src/images/catba.jpg" alt="Hà Nội đi Cát Bà">
+                        <div class="hero-section__content">
+                            <h4 class="text-upper text-blue">GO FOR FUTURE2</h4>
+                            <h2 class="text-upper text-white">Dịch vụ đặt xe sân bay Nội Bài giá rẻ</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                                <div class="trip__information">
-                                    <div class="trip__detail">
-                                        <h4 class="name">Hà Nội đi Cát Bà</h4>
-                                        <span>
-                                            <i class="fa fa-clock"></i> 2h15phut
-                                        </span>
-                                    </div>
+            <!-- form -->
+            <div id="mainForm" class="form-calculator">
+                <div class="tab">
+                    <ul class="taxiType">
+                        <li class="item active">
+                            <i class="fas fa-paper-plane icon" aria-hidden="true"></i>
+                            <span class="text">Taxi Sân Bay</span>
+                        </li>
+                        <li class="item">
+                            <i class="fas fa-road icon" aria-hidden="true"></i>
+                            <span class="text">Đường dài trọn gói</span>
+                        </li>
+                        <li class="item">
+                            <a href="#">
+                                <i class="fas fa-gift icon" aria-hidden="true"></i>
+                                <span class="text">Đường Dài Siêu Rẻ</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#">
+                                <i class="fas fa-star icon" aria-hidden="true"></i>
+                                <span class="text">Yêu Cầu Đặc Biệt</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form">
+                    <div class="input-01">
+                        <!-- input text -->
+                        <input type="text" placeholder="Điểm đón" name="start-location" id="start-location">
 
-                                    <div class="trip__fee">
-                                        <p class="fee">
-                                            <i class="fas fa-dollar-sign"></i> <strong class="text-italic">1,200,000
-                                                vnđ</strong>
-                                        </p>
+                        <!-- button location -->
+                        <div class="button-decoration green">
+                            <label for="start-location">
+                                <i class="blue fa fa-map-marker-alt"></i>
+                            </label>
+                        </div>
 
-                                        <span class="decoration-add">+</span>
-                                    </div>
+                        <!-- suggest location -->
+                        <div class="suggest-location"></div>
+                    </div>
+
+                    <div class="input-01 input-01--02">
+                        <!-- input text -->
+                        <input type="text" placeholder="Điểm đến" name="end-location" id="end-location">
+
+                        <!-- button location -->
+                        <div class="button-decoration red">
+                            <label for="end-location">
+                                <i class="blue fa fa-map-marker-alt"></i>
+                            </label>
+                        </div>
+
+                        <!-- suggest location -->
+                        <div class="suggest-location">
+                        </div>
+                    </div>
+
+                    <div class="input-01 input-01--03 time">
+                        <!-- input text -->
+                        <input type="text" placeholder="Thời gian" name="start-location" id="datePicker-01">
+
+                        <!-- button location -->
+                        <div class="button-decoration">
+                            <i class="fa fa-clock"></i>
+                        </div>
+                    </div>
+
+                    <button class="button-01">Xem giá</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-02 why-choose">
+            <div class="kd-container">
+                <div class="container-fluid">
+                    <h2 class="text-title text-center">
+                        <span>Tại sao chọn </span>
+                        <strong>GoCheap.VN</strong>
+                    </h2>
+
+                    <div class="row">
+                        <!-- content-01 -->
+                        <div class="col-sm-4">
+                            <div class="choose-contents">
+                                <div class="icon">
+                                    <i class="fa fa-hand-holding-usd"></i>
                                 </div>
+                                <div class="contents">
+                                    <h3 class="title">
+                                        <span>Tận hưởng chuyến đi an toàn và tiết kiệm</span>
+                                    </h3>
+                                    <p class="description">Giá cước trọn gói, rẻ nhất trên thị trường. Chỉ cần chọn đi,
+                                        điểm
+                                        đến và chọn ngày đi mong muốn. Chúng tôi sẽ lọc và gợi ý cho bạn những chuyến đi
+                                        phù
+                                        hợp.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- content-02 -->
+                        <div class="col-sm-4">
+                            <div class="choose-contents">
+                                <div class="icon">
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="contents">
+                                    <h3 class="title">
+                                        <span>Chất lượng dịch vụ sang trọng, đẳng cấp</span>
+                                    </h3>
+                                    <p class="description">Hoàn 100% chi phí nếu khách không hài lòng. Xe riêng đón trả
+                                        khách
+                                        tại
+                                        nhà, không giới hạn điểm đón/trả. Dàn xe mới,
+                                        chất lượng tốt, tiện nghi (nhiều loại xe từ 4 - 45 chỗ)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- content-03 -->
+                        <div class="col-sm-4">
+                            <div class="choose-contents">
+                                <div class="icon">
+                                    <i class="fa fa-user-shield"></i>
+                                </div>
+                                <div class="contents">
+                                    <h3 class="title">
+                                        <span>Tiêu chuẩn phục vụ chuẩn Kim Cương</span>
+                                    </h3>
+                                    <p class="description">Chuyến đi an toàn, phải bắt đầu từ người lái xe đáng tin cậy.
+                                        Các
+                                        Đối
+                                        tác
+                                        Tài Xế luôn được trang bị sẵn sàng để xử
+                                        lý với bất kỳ vấn đề nào phát sinh trên đường đi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-03 long-trip hide-sm">
+            <div class="top-content">
+                <h2 class="title">
+                    <span>TUYẾN ĐƯỜNG DÀI</span>
+                </h2>
+                <p class="desction">Cam kết mức giá rẻ nhất trên thị trường. Luôn đứng top 1 về giá dịch vụ xe sân bay.
+                    Xe
+                    riêng đón trả khách tại nhà, không giới hạn điểm đón/trả.</p>
+            </div>
+
+            <div class="bottom-content">
+                <div class="swiper-longtrip">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="trip-item">
+                                <a href="javascript:void(0)" class="trip-link" title="Xem thêm">
+                                    <img src="./src/images/catba.jpg" alt="Hà Nội đi Cát Bà">
+
+                                    <div class="trip__information">
+                                        <div class="trip__detail">
+                                            <h4 class="name">Hà Nội đi Cát Bà</h4>
+                                            <span>
+                                                <i class="fa fa-clock"></i> 2h15phut
+                                            </span>
+                                        </div>
+
+                                        <div class="trip__fee">
+                                            <p class="fee">
+                                                <i class="fas fa-dollar-sign"></i> <strong class="text-italic">1,200,000
+                                                    vnđ</strong>
+                                            </p>
+
+                                            <span class="decoration-add">+</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next longtrip-button-next"></div>
+                    <div class="swiper-button-prev longtrip-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-04 counting">
+            <div class="kd-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-sm-3">
+                            <div class="counting-wrapper">
+                                <div class="icon">
+                                    <i class="fa fa-taxi"></i>
+                                </div>
+                                <div class="counting-number">
+                                    <span class="count">500</span> <sup>+</sup>
+                                </div>
+                                <div class="counting-desc">
+                                    <span>Taxi 5 - 7 chỗ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="counting-wrapper">
+                                <div class="icon">
+                                    <i class="fa fa-users"></i>
+                                </div>
+                                <div class="counting-number">
+                                    <span class="count">1500</span> <sup>+</sup>
+                                </div>
+                                <div class="counting-desc">
+                                    <span>Chuyến đi trong tháng</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="counting-wrapper">
+                                <div class="icon">
+                                    <i class="fa fa-road"></i>
+                                </div>
+                                <div class="counting-number">
+                                    <span class="count">78000</span> <sup>+</sup>
+                                </div>
+                                <div class="counting-desc">
+                                    <span>Số KM hành trình mỗi năm</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="counting-wrapper">
+                                <div class="icon">
+                                    <i class="fa fa-thumbs-up"></i>
+                                </div>
+                                <div class="counting-number">
+                                    <span class="count">7890</span> <sup>+</sup>
+                                </div>
+                                <div class="counting-desc">
+                                    <span>Đánh giá hài lòng từ khách hàng</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-05 intro">
+            <div class="kd-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="#" title="Dịch vụ đặt xe sân bay Nội Bài giá rẻ" class="link">
+                                <img src="https://www.gocheap.vn/storage/app/uploads/public/5b4/3d8/005/thumb_43_600x0_0_0_crop.jpg"
+                                    data-small="" alt="Dịch vụ đặt xe sân bay Nội Bài giá rẻ"
+                                    class="image thumbnail-01">
                             </a>
                         </div>
-                    </div>
-                </div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next longtrip-button-next"></div>
-                <div class="swiper-button-prev longtrip-button-prev"></div>
-            </div>
-        </div>
-    </section>
+                        <div class="col-md-6">
+                            <div class="info-wrapper">
+                                <h4 class="title">
+                                    <span>GIỚI THIỆU VỀ GOCHEAP.VN</span>
+                                </h4>
+                                <h1 class="slogan">
+                                    <span>Dịch vụ đặt xe sân bay Nội Bài giá rẻ</span>
+                                </h1>
+                                <div class="info-content">
+                                    <p>Gocheap.VN là một công ty khởi nghiệp của các kỹ sư công nghệ thông tin tại Hà
+                                        Nội.
+                                        Với mục đích đưa dịch vụ vận tài hành khách chất lượng cao với chi phí rẻ nhất
+                                        đến
+                                        với tất cả quý khách hàng cùng sự hỗ trợ đặc biệt của công nghệ thông tin và hệ
+                                        thống AI tự phát triển.</p>
 
-    <section class="section-04 counting">
-        <div class="kd-container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-6 col-sm-3">
-                        <div class="counting-wrapper">
-                            <div class="icon">
-                                <i class="fa fa-taxi"></i>
-                            </div>
-                            <div class="counting-number">
-                                <span class="count">500</span> <sup>+</sup>
-                            </div>
-                            <div class="counting-desc">
-                                <span>Taxi 5 - 7 chỗ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <div class="counting-wrapper">
-                            <div class="icon">
-                                <i class="fa fa-users"></i>
-                            </div>
-                            <div class="counting-number">
-                                <span class="count">1500</span> <sup>+</sup>
-                            </div>
-                            <div class="counting-desc">
-                                <span>Chuyến đi trong tháng</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <div class="counting-wrapper">
-                            <div class="icon">
-                                <i class="fa fa-road"></i>
-                            </div>
-                            <div class="counting-number">
-                                <span class="count">78000</span> <sup>+</sup>
-                            </div>
-                            <div class="counting-desc">
-                                <span>Số KM hành trình mỗi năm</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <div class="counting-wrapper">
-                            <div class="icon">
-                                <i class="fa fa-thumbs-up"></i>
-                            </div>
-                            <div class="counting-number">
-                                <span class="count">7890</span> <sup>+</sup>
-                            </div>
-                            <div class="counting-desc">
-                                <span>Đánh giá hài lòng từ khách hàng</span>
+                                    <p>Có mặt trên thị trường từ năm 2014, Gocheap hiện đã có mạng lưới đối tác cũng như
+                                        khách hàng tương đối ổn định. Chất lượng dịch vụ được đánh giá cao giúp chúng
+                                        tôi
+                                        từng bước vững vàng tạo dựng thương hiệu trong những SME khởi nghiệp tại Hà Nội.
+                                    </p>
+
+                                    <p>Với tham vọng vươn xa, Gocheap luôn hoàn thiện bản thân và chào đón các nhà đầu
+                                        tư
+                                        tham gia góp vốn nhằm đưa công ty thành một doanh nghiệp công nghệ vận chuyển
+                                        lớn
+                                        tại Việt Nam cũng như khu vực.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section-05 intro">
-        <div class="kd-container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <a href="#" title="Dịch vụ đặt xe sân bay Nội Bài giá rẻ" class="link">
-                            <img src="https://www.gocheap.vn/storage/app/uploads/public/5b4/3d8/005/thumb_43_600x0_0_0_crop.jpg"
-                                data-small="" alt="Dịch vụ đặt xe sân bay Nội Bài giá rẻ"
-                                class="b-lazy img-responsive img-thumbnail b-loaded">
-                        </a>
+        <section class="section-06 news">
+            <div class="kd-container">
+                <div class="container">
+                    <h2 class="text-title">
+                        <span><strong>Tin Tức</strong> &amp; <strong>Sự Kiện</strong></span>
+                    </h2>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <article class="post-01">
+                                <a href="javascript:void(0)"
+                                    title="“Đưa nhau đi trốn” với 12 địa điểm du lịch gần Hà Nội vào cuối tuần">
+                                    <div class="post__thumbnail">
+                                        <img src="https://www.gocheap.vn/storage/app/uploads/public/5d7/20d/d20/thumb_215_600x0_0_0_crop.jpg"
+                                            data-small
+                                            alt="“Đưa nhau đi trốn” với 12 địa điểm du lịch gần Hà Nội vào cuối tuần"
+                                            class="thumbnail-01">
+                                    </div>
+                                    <h4 class="title">“Đưa nhau đi trốn” với 12 địa điểm du lịch gần Hà Nội vào cuối
+                                        tuần</h4>
+                                    <h6 class="description">Nếu muốn trốn khỏi những xô bồ, ồn ã của Hà Nội để có những
+                                        giây phút cuối tuần thư giãn, thú vị thì 12 địa điểm du lịch gần Hà Nội trong 1
+                                        ngày sau đây chính là những điểm đến lý tưởng dành cho bạn.</h6>
+                                </a>
+                            </article>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <article class="post-01">
+                                        <a href="javascript:void(0)"
+                                            title="“Đưa nhau đi trốn” với 12 địa điểm du lịch gần Hà Nội vào cuối tuần">
+                                            <div class="post__thumbnail">
+                                                <img src="https://www.gocheap.vn/storage/app/uploads/public/5d7/0b9/eb9/thumb_214_600x0_0_0_crop.jpg"
+                                                    data-small
+                                                    alt="“Đưa nhau đi trốn” với 12 địa điểm du lịch gần Hà Nội vào cuối tuần"
+                                                    class="thumbnail-01">
+                                            </div>
+                                            <h4 class="title">Đồ ăn ở sân bay Nội Bài có món gì ngon?</h4>
+                                            <h6 class="description">Di chuyển bằng máy bay đang trở thành xu thế trong
+                                                một xã hội hiện đại, nơi mà thời gian được ví như vàng bạc, kim cương.
+                                                Tuy nhiên, những sự cố thường gặp như delay chuyến bay, thời gian làm
+                                                thủ tục quá lâu, an ninh quá khắt khe hay đồ ăn đắt đỏ khiến nhiều người
+                                                phải cân nhắc</h6>
+                                        </a>
+                                    </article>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <article class="post-01">
+                                        <a href="javascript:void(0)"
+                                            title="“Đưa nhau đi trốn” với 12 địa điểm du lịch gần Hà Nội vào cuối tuần">
+                                            <div class="post__thumbnail">
+                                                <img src="https://www.gocheap.vn/storage/app/uploads/public/5d6/f1b/021/thumb_213_600x0_0_0_crop.jpg"
+                                                    data-small
+                                                    alt="“Đưa nhau đi trốn” với 12 địa điểm du lịch gần Hà Nội vào cuối tuần">
+                                            </div>
+                                            <h4 class="title">Những con phố ẩm thực ở Hà Nội nổi tiếng nhất thủ đô</h4>
+                                            <h6 class="description">Hà Nội được biết đến là thành phố với những món ăn
+                                                ẩm thực đường phố đầy thơm ngon với giá cả phải chăng. Nơi đây nổi tiếng
+                                                với những con phố mà chỉ cần nghe thấy tên cũng biết bán món ăn gì. Giờ
+                                                hãy cùng Gocheap khám phá những con phố ẩm thực nổi tiếng nhất ở thủ đô
+                                                nhé!</h6>
+                                        </a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a class="twitter-timeline" href="https://twitter.com/gocheapvn?ref_src=twsrc%5Etfw"
+                                data-tweet-limit="2">Tweets by gocheapvn</a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div id="info-wrapper">
-                            <h4 class="title text-upper text-color">
-                                <span>GIỚI THIỆU VỀ GOCHEAP.VN</span>
-                            </h4>
-                            <h1 class="slogan">
-                                <span>Dịch vụ đặt xe sân bay Nội Bài giá rẻ</span>
-                            </h1>
-                            <div class="info-content">
-                                <p>Gocheap.VN là một công ty khởi nghiệp của các kỹ sư công nghệ thông tin tại Hà Nội.
-                                    Với mục đích đưa dịch vụ vận tài hành khách chất lượng cao với chi phí rẻ nhất đến
-                                    với tất cả quý khách hàng cùng sự hỗ trợ đặc biệt của công nghệ thông tin và hệ
-                                    thống AI tự phát triển.</p>
+                </div>
+            </div>
+        </section>
 
-                                <p>Có mặt trên thị trường từ năm 2014, Gocheap hiện đã có mạng lưới đối tác cũng như
-                                    khách hàng tương đối ổn định. Chất lượng dịch vụ được đánh giá cao giúp chúng tôi
-                                    từng bước vững vàng tạo dựng thương hiệu trong những SME khởi nghiệp tại Hà Nội.</p>
+        <section class="bottom-link">
+            <div class="kd-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-6 col-md-3">
+                                    <h4 class="title">Giới Thiệu</h4>
+                                    <ul class="list">
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Về chúng tôi</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Đối tác</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Tuyển dụng</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Tin tức công ty</a>
+                                        </li>
 
-                                <p>Với tham vọng vươn xa, Gocheap luôn hoàn thiện bản thân và chào đón các nhà đầu tư
-                                    tham gia góp vốn nhằm đưa công ty thành một doanh nghiệp công nghệ vận chuyển lớn
-                                    tại Việt Nam cũng như khu vực.</p>
+                                    </ul>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <h4 class="title">Chương trình</h4>
+                                    <ul class="list">
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Khách hàng tổ chức</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Đối tác vận chuyển</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Beemedia.com.vn</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Trung tâm dịch vụ xe ATOM</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <h4 class="title">Chính sách</h4>
+                                    <ul class="list">
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Vận chuyển hành khách</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Bảo vệ quyền riêng tư</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Sử dụng dịch vụ</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Giải quyết sự cố & khiếu nại</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <h4 class="title">HỖ TRỢ</h4>
+                                    <ul class="list">
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Hướng dẫn đặt xe</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">Câu hỏi thường gặp</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">mage-addons.com</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="javascript:void(0)">thienco.vn</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 class="title">CÀI ĐẶT APP ĐỐI TÁC</h4>
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="javascript:void(0)" target="_blank" title="Link tải Gocheap">
+                                        <img src="./src/images/googleplay.png" alt="google play">
+                                    </a>
+                                    <a href="javascript:void(0)" target="_blank" title="Link tải Gocheap">
+                                        <img src="./src/images/appstore.png" alt="appstore">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="footer">
+            <div class="kd-container">
+                <div class="container">
+                    <div class="footer-info text-center">
+                        <p><strong>CÔNG TY CỔ PHẦN TƯ VẤN VÀ TRIỂN KHAI CÔNG NGHỆ THIÊN ÂN</strong></p>
+                        <p>Tầng 8, Tòa nhà số 11, ngõ 02 cổng trường ĐH Hà Nội (cạnh Passion Café), km 9, Nguyễn Trãi, Thanh Xuân, Hà Nội</p>
+                        <p>Điện thoại:
+                            <a href="tel:024.73000600">024.73000600</a>
+                            Email:
+                            <a href="mailto:hotro@gocheap.vn">hotro@gocheap.vn</a>
+                            Website: www.gocheap.vn
+                        </p>
+                        <p> GOCHEAP © <script>document.write(new Date().getFullYear())</script> Được hỗ trợ bời <b><a href="http://ongen.asia">ongen.asia</a></b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link async href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <!-- <script type="text/javascript"> (function() {
+        var css = document.createElement('link');
+        css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css';
+        css.rel = 'stylesheet'; css.type = 'text/css';
+        document.getElementsByTagName('head')[0].appendChild(css); })();
+    </script> -->
 
     <!-- swiper slide -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js.map"></script>
+
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.2/flatpickr.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flatpickr@4.1.4/dist/plugins/confirmDate/confirmDate.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.2/flatpickr.min.js"></script>
+    <script src="https://unpkg.com/flatpickr@4.1.4/dist/plugins/confirmDate/confirmDate.js"></script>
+
     <script src="src/js/index.js"></script>
 </body>
 

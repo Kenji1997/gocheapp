@@ -1,0 +1,31 @@
+// start grid mixin
+@mixin grid-01($sm: "1", $md: "1", $lg: "1",$paddingsm: null, $paddingmd: $paddingsm, $paddinglg: $paddingmd) {
+  font-size: 0;
+  margin: 0 -#{$paddingsm};
+  display: flex;
+  flex-wrap: wrap;
+
+  .grid-item {
+    width: #{ 100/$sm + "%"};
+    padding: $paddingsm;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+@media screen and (min-width: 768px) {
+    margin: 0 -#{$paddingmd};
+    .grid-item {
+      padding: $paddingmd;
+      width: #{ 100/$md + "%"};
+    }
+  }
+
+@media screen and (min-width: 992px) {
+    margin: 0 -#{$paddinglg};
+    .grid-item {
+      padding: $paddinglg;
+      width: #{ 100/$lg + "%"};
+    }
+  }
+}
+// end grid mixin

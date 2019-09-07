@@ -1,0 +1,236 @@
+@import 'bootstrap/bootstrap-reboot.scss'
+@import 'bootstrap/bootstrap-grid.scss'
+@import 'base'
+@import 'common'
+@import 'color.scss'
+
+body
+    font-family: 'Lato', 'Roboto', 'Open Sans', sans-serif
+
+$map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6: '\f055', 7: '\f2b9', 8: '\f007')
+
+.header-01
+    border: thin solid #dddddd
+    padding: 8px 0
+    @include fixed(0, 0, null, 0)
+    z-index: 999
+    background-color: #fff
+
+    .header__top
+        display: none
+
+    .header__bottom
+        position: relative
+
+    .logo
+        display: inline-block
+        vertical-align: middle
+        img
+            height: 50px
+        
+    .menu-01__wrapper
+        @include fixed($header-mobile-height, null, 0, 0)
+        background-color: #fff
+        width: $header-mobile-width
+        border-right: thin solid #ddd
+        z-index: 999
+        transform: translateX(-100%)
+        transition: all 0.3s ease-in-out
+        &.show
+            transform: translateX(0)
+    
+    .menu-01
+        @each $item, $code in $map-header-icon
+            .item:nth-child(#{$item})
+                &:before
+                    font-family: "Font Awesome 5 Free"
+                    font-weight: 900
+                    content: $code
+                    font-size: 15px
+                    margin-right: 3px
+
+        .item
+            padding: 10px 10px 10px 20px
+            border-bottom: thin solid #ddd
+        a
+            color: #333
+            font-size: 15px
+            
+    
+    .trigger-toggle-menu
+        @include header__trigger-toggle-menu(3px, $blue-primary)
+        right: 0
+
+.main-content
+    padding-top: $header-mobile-height
+
+.hero-section
+    position: relative
+    .hero-section__content
+        display: none
+    
+    .swiper-slide
+        min-height: 466px
+        background-repeat: no-repeat
+        background-position: center
+        background-size: auto 100%
+
+.form-calculator
+    @include absolute(50%, -50%)
+    transform: translate(-50%, -50%)
+    z-index: 100
+    width: 100%
+    max-width: 430px
+
+    background-color: transparent
+    padding: 0 15px
+    .taxiType
+        margin-bottom: 0
+        @extend %clearFix
+        .item
+            background-color: $blue-primary
+            padding: 10px 15px
+            line-height: 1.42857143
+            text-align: center
+            float: left
+            margin-right: 2px
+            border-top-left-radius: 4px
+            border-top-right-radius: 4px
+            &.active
+                background-color: #fff
+                .icon
+                    color: $blue-primary
+                .text
+                    display: inline-block
+        .icon
+            color: #ffffff
+        .text
+            color: $blue-primary
+            font-size: 15px
+            display: none
+
+    .form
+        padding: 15px
+        background-color: #fff
+        margin-top: -1px
+
+    .input-01
+        margin-bottom: 15px
+        input
+            float: left
+            width: calc(100% - 36px)
+            height: 34px
+            padding: 6px 12px
+            font-size: 14px
+            line-height: 1.42857143
+            color: #555
+            background-color: #fff
+            background-image: none
+            border: 1px solid #ccc
+            border-radius: 4px
+            border-top-right-radius: 0
+            border-bottom-right-radius: 0
+            box-shadow: inset 0 1px 1px rgba(0,0,0,0.075)
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+            &:focus
+                outline: none
+        .button-decoration
+            display: inline-block
+            height: 34px
+            line-height: 34px
+            font-size: 14px
+            color: #555
+            width: 36px
+            text-align: center
+            background-color: #eee
+            border: thin solid #ccc
+            border-radius: 4px
+            border-top-left-radius: 0
+            border-bottom-left-radius: 0
+            margin-left: -1px
+            &.green i
+                color: #15b55f
+            &.red i
+                color: #ca1414
+
+    .button-01
+        width: 100%
+        background-color: $blue-primary
+        color: #fff
+        border: none
+        transition: all 0.3s ease-in-out
+        height: 34px
+        line-height: 34px
+        border-radius: 4px
+        text-transform: uppercase
+        font-size: 14px
+        font-weight: bold
+        &:hover
+            background-color: #1b80ce
+
+.why-choose
+    padding-top: 20px
+    .choose-contents
+        @extend %clearFix
+    .icon
+        font-size: 50px
+        color: $blue-primary
+        margin-top: 35px
+        float: left
+        width: 20%
+    .contents
+        float: left
+        width: 80%
+        .title
+            text-transform: uppercase
+        .description
+            font-size: 15px
+            text-align: justify
+            margin-bottom: 35px
+
+.counting
+    background-image: url('../images/cars.jpg')
+    background-attachment: fixed
+    position: relative
+    padding: 100px 0px 60px
+    &:before
+        content: ''
+        display: block
+        @include absolute(0, 0, 0, 0)
+        background-color: rgba(#000, 0.5)
+    .counting-wrapper
+        // color: $blue-primary
+        text-align: center
+        color: #ffffff
+        margin-bottom: 20px
+    .icon
+        font-size: 40px
+        line-height: 1
+    .counting-number
+        font-size: 30px
+        font-weight: bold
+    .counting-desc
+        font-size: 15px
+        font-weight: 500
+
+.intro
+    padding: 30px 0 0
+    .info-wrapper
+        margin-top: 30px
+    .title
+        text-transform: uppercase
+        color: $blue-primary
+        margin: 10px 0
+        font-size: 15px
+    .slogan
+        font-size: 30px
+        font-weight: 900
+        margin: 0 0 30px 0
+
+.news
+    padding-bottom: 30px
+    .post-01
+        margin-bottom: 25px
+
+.bottom-link
+    padding: 30px 0
