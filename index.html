@@ -11,10 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,500,700&display=swap" rel="stylesheet">
 
     <!-- fontawesome -->
-    <script
-        type="text/javascript"> (function () { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
-    <!-- <script src="https://kit.fontawesome.com/d46d03aa0f.js"></script> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script type="text/javascript"> (function () { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
     <link rel="stylesheet" href="./src/css/main.css">
 </head>
 
@@ -76,23 +73,33 @@
             <div class="kd-container">
                 <div class="container-fluid">
                     <div class="logo">
-                        <img src="./src/images/logo.png" alt="gocheap" class="hide-sm white">
-                        <img src="./src/images/logo-black.png" alt="gocheap" class="hide-lg black">
+                        <a href="./index.html">
+                            <img src="./src/images/logo.png" alt="gocheap" class="hide-sm white">
+                            <img src="./src/images/logo-black.png" alt="gocheap" class="hide-lg black">
+                        </a>
                     </div>
 
                     <nav class="menu-01__wrapper menu-wrapper">
                         <ul class="menu-01">
-                            <li class="item">
+                            <li class="item active">
                                 <a href="javascript:void(0)">Trang chủ</a>
                             </li>
                             <li class="item">
                                 <a href="javascript:void(0)">Vé máy bay</a>
                             </li>
-                            <li class="item">
+                            <li class="item has-sub-menu">
                                 <a href="javascript:void(0)">Đối tác</a>
+                                <ul class="sub-menu">
+                                    <li class="item"><a class="hvr-sweep-to-right btn-order text-upper" href="javascript:void(0)" title="Chia Sẻ Doanh Thu">Chia Sẻ Doanh Thu</a></li>
+                                    <li class="item"><a class="hvr-sweep-to-right btn-order text-upper" href="javascript:void(0)" title="Đối Tác Vận Chuyển">Đối Tác Vận Chuyển</a></li>
+                                </ul>
                             </li>
-                            <li class="item">
+                            <li class="item has-sub-menu">
                                 <a href="javascript:void(0)">Khách hàng</a>
+                                <ul class="sub-menu">
+                                    <li class="item"><a class="hvr-sweep-to-right btn-order text-upper" href="javascript:void(0)" title="Khách Hàng Thường Xuyên">Khách Hàng Thường Xuyên</a></li>
+                                    <li class="item"><a class="hvr-sweep-to-right btn-order text-upper" href="javascript:void(0)" title="Khách Hàng Tổ Chức">Khách Hàng Tổ Chức</a></li>
+                                </ul>
                             </li>
                             <li class="item hide-sm">
                                 <a href="javascript:void(0)">Mã vé</a>
@@ -140,7 +147,7 @@
                             <h4 class="title">GO FOR FUTURE2</h4>
                             <h2 class="description">Dịch vụ đặt xe sân bay Nội Bài giá rẻ</h2>
                         </div>
-                        <img src="http://unsplash.it/1200/900" alt="Go to future">
+                        <img src="http://unsplash.it/1920/921" alt="Go to future">
                     </div>
                 </div>
             </div>
@@ -172,12 +179,12 @@
                     </ul>
                 </div>
                 <div class="form">
-                    <form action="./fee.html" method="POST" id="booking-form">
+                    <form action="./step1.html" id="booking-form">
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="input-01">
                                     <!-- input text -->
-                                    <input type="text" placeholder="Điểm đón" name="start-location" id="start-location">
+                                    <input type="text" placeholder="Điểm đón" required="" name="start-location" id="start-location">
 
                                     <!-- button location -->
                                     <div class="button-decoration green">
@@ -193,7 +200,7 @@
                             <div class="col-lg-4">
                                 <div class="input-01 input-01--02">
                                     <!-- input text -->
-                                    <input type="text" placeholder="Điểm đến" name="end-location" id="end-location">
+                                    <input type="text" placeholder="Điểm đến" required name="end-location" id="end-location">
 
                                     <!-- button location -->
                                     <div class="button-decoration blue-bold">
@@ -210,7 +217,7 @@
                             <div class="col-lg-2">
                                 <div class="input-01 input-01--03 time">
                                     <!-- input text -->
-                                    <input type="text" placeholder="Thời gian" name="start-location" id="datePicker-01">
+                                    <input type="text" placeholder="Thời gian" required="" name="start-location" id="datePicker-01">
 
                                     <!-- button location -->
                                     <div class="button-decoration">
@@ -753,12 +760,6 @@
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link async href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    <!-- <script type="text/javascript"> (function() {
-        var css = document.createElement('link');
-        css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css';
-        css.rel = 'stylesheet'; css.type = 'text/css';
-        document.getElementsByTagName('head')[0].appendChild(css); })();
-    </script> -->
 
     <!-- swiper slide -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">

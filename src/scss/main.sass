@@ -11,7 +11,7 @@ body
     max-width: 1170px
     margin: 0 auto
 
-$map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6: '\f055', 7: '\f2b9', 8: '\f007')
+$map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 6: '\f029', 7: '\f055', 8: '\f2b9', 9: '\f007')
 
 .header-01
     border: thin solid #dddddd
@@ -45,7 +45,7 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
     
     .menu-01
         @each $item, $code in $map-header-icon
-            .item:nth-child(#{$item})
+            & > .item:not(.hide-sm):nth-child(#{$item})
                 &:before
                     font-family: "Font Awesome 5 Free"
                     font-weight: 900
@@ -53,9 +53,36 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
                     font-size: 15px
                     margin-right: 3px
 
-        .item
+        & > .item
             padding: 10px 10px 10px 20px
             border-bottom: thin solid #ddd
+            &.has-sub-menu
+                position: relative
+                &.show
+                    &:after
+                        transform: rotateZ(180deg)
+                    & > .sub-menu
+                        max-height: 500px
+                &:after
+                    font-family: "Font Awesome 5 Free"
+                    font-weight: 900
+                    content: '\f078'
+                    font-size: 15px
+                    font-size: 11px
+                    margin-right: 3px
+                    @include absolute(15px, 15px)
+                    transition: all 0.3s ease-in-out
+        .sub-menu
+            max-height: 0
+            transition: all 0.3s ease-in-out
+            overflow: hidden
+            margin-left: 17px
+            box-sizing: border-box
+
+            & > .item
+                margin-top: 10px
+                a
+                    font-size: 12px
         a
             color: #333
             text-transform: uppercase
@@ -84,10 +111,13 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
                         display: none !important
                     .black
                         display: inline-block !important
-                .menu-01 .item a
-                    color: $blue-primary
-                    &:hover
-                        color: #ffffff
+                .menu-01 .item 
+                    a
+                        color: $blue-primary
+                        &:hover
+                            color: #ffffff
+                    &.has-sub-menu:after
+                        color: $blue-primary
         .header__top
             transition: background-color 0.3s ease-in-out
             display: block
@@ -113,14 +143,14 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
             background-color: transparent
             border-right: none
             margin-top: 5px
-            .item
+            .menu-01 > .item
                 display: inline-block
                 border-bottom: none
                 padding: 0
-                &.active a
+                &.active > a
                     background-color: $blue-primary
                     color: #ffffff !important
-                a
+                & > a
                     color: #ffffff
                     font-size: 13px
                     display: inline-block
@@ -128,12 +158,40 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
                     padding: 10px 25px
                     transition: all 0.3s ease-in-out
                     border-radius: 23px
-                    &:hover
-                        background-color: $blue-primary
                 &:before
                     display: none
+                &:hover > a
+                    background-color: $blue-primary
         .menu-01
             margin-bottom: 0
+            .has-sub-menu
+                &:after
+                    top: 11px !important
+                    right: 10px !important
+                    color: #ffffff
+                &:hover
+                    .sub-menu
+                        opacity: 1
+                        visibility: visible
+
+            .sub-menu
+                @include absolute(100%, null, null, 0)
+                max-height: max-content !important
+                width: 200px
+                opacity: 0
+                visibility: hidden
+                padding-top: 7px
+                .item
+                    background-color: #fff
+                    width: 100%
+                    margin-top: 0
+                    &:not(:last-child)
+                        border-bottom: 1px solid $blue-primary
+                    a
+                        display: block
+                        padding: 10px
+                        width: 100%
+                        color: $blue-primary
 
 .main-content
     padding-top: $header-mobile-height
@@ -191,9 +249,6 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
                 font-size: 30px
                 color: #ffffff
             
-            
-
-
 .form-calculator
     @include absolute(50%, 50%)
     transform: translate(50%, -50%)
@@ -476,21 +531,24 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
     border-radius: 50px
     text-decoration: none    
 
+.progress-01
+    padding: 15px
+    [class^="col-"]
+        padding: 0 1px
+    .step
+        background-color: #ddd
+        padding: 10px
+        height: 100%
+        text-align: center
+        font-size: 15px
+        &.active
+            background-color: $blue-primary
+            color: #ffffff
+    @media screen and (min-width: $desktop)
+        padding: 30px 30px 15px
+            
 .fee-calculator
     margin-bottom: 60px
-    .progress-01
-        padding: 15px
-        [class^="col-"]
-            padding: 0 1px
-        .step
-            background-color: #ddd
-            padding: 10px
-            height: 100%
-            text-align: center
-            font-size: 15px
-            &.active
-                background-color: $blue-primary
-                color: #ffffff
 
     .trip-information
         background-color: #ddd
@@ -587,8 +645,6 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
                     .col-md-4
                         text-align: right
     @media screen and (min-width: $desktop)
-        .progress-01
-            padding: 30px 30px 15px
         .trip-information
             background-color: transparent
             .information
@@ -607,3 +663,57 @@ $map-header-icon: (1: '\f015', 2: '\f072', 3: '\f1b9', 4: '\f0c0', 5: '\f029', 6
             background-color: #ddd
             .map-info
                 margin-top: 17px
+
+.user-information
+    .progress-01
+        padding: 30px 15px 
+
+.order-information
+    background-color: #eee
+    padding: 0 15px
+    .trip-information
+        padding: 0 15px
+        .item
+            color: #333333
+            strong
+                margin-right: 4px
+    .map
+        padding-bottom: 15px
+        .label
+            padding: 0 15px
+    .button-submit
+        display: inline-block
+        margin-bottom: 0
+        font-weight: normal
+        text-align: center
+        vertical-align: middle
+        -ms-touch-action: manipulation
+        touch-action: manipulation
+        cursor: pointer
+        background-image: none
+        border: 1px solid transparent
+        white-space: nowrap
+        padding: 6px 12px
+        font-size: 14px
+        line-height: 1.42857143
+        border-radius: 4px
+        -webkit-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        user-select: none
+        color: #fff
+        background-color: #337ab7
+        border-color: #2e6da4
+    @media screen and (min-width: $tablet)
+        .map
+            padding-bottom: 40px
+        .label
+            text-align: right
+    @media screen and (min-width: $desktop)
+        .trip-information
+            margin-bottom: 40px
+
+.top-baner
+    background-color: rgba(#000, 0.6)
+    color: #ffffff
+    padding-top: 25px
